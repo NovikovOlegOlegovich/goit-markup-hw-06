@@ -828,6 +828,8 @@ body {
   border-radius: 4px;
   border: none;
 
+  cursor: pointer;
+
   
   font-weight: 700;
   font-size: 16px;
@@ -836,7 +838,6 @@ body {
   letter-spacing: 0.06em;
 
   color: #FFFFFF;
-
 }
 
 .modal-button-close {
