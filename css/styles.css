@@ -755,6 +755,7 @@ body {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   height: 40px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-field label {
@@ -773,13 +774,16 @@ body {
   left: 12px;
 
   transform: translateY(0, -50%);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-field textarea {
+  outline: none;
   padding: 12px 16px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   min-width: 448px;
   min-height: 120px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-field textarea::placeholder {
@@ -789,6 +793,12 @@ body {
   letter-spacing: 0.01em;
 
   color: rgba(117, 117, 117, 0.5);
+}
+
+.form-field textarea:focus {
+  outline: none;
+  border: 1px solid #2196F3;
+  border-radius: 4px;
 }
 
 .textarea {
@@ -849,28 +859,71 @@ body {
 }
 
 .form-checkbox label {
-  display: inline-block;
-  outline: 1px solid black;
+  display: inline-flex;
+  align-items: center;
+}
+
+.checkbox {
+  /* -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  position:absolute; */
+
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .checkbox-icon {
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
   
-  border: 2px solid black;
-  border-radius: 5px;
-
+  border: 2px solid #212121;
+  border-radius: 2px;
+  transition: border 2000ms linear;
 }
 
 .checkbox:checked + .checkbox-icon {
-  background-image: ;
+  border: var(--accent-color);
+  background-image: url('../images/icon-check.svg');
+  background-size: contain;
+  background-origin: border-box;
 }
+
+.form-link {
+  margin-left: 5px;
+  color: var(--accent-color)
+}
+
+.form-field input:focus {
+    outline: none;
+    border: 1px solid #2196F3;
+    border-radius: 4px;   
+}
+
+.form-field input:focus + .form-icon,
+.form-field input:hover + .form-icon{
+  color: var(--accent-color);
+}
+
+.form-svg {
+  fill: currentColor;
+}
+
 
 /* Сторінка portfolio.html */
 
 .heder-portfolio {
   border-bottom: 1px solid #ececec;
+ 
 }
 
 .filter-nav {
